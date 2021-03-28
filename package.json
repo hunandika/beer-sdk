@@ -1,0 +1,23 @@
+{
+  "name": "beer-sdk",
+  "version": "0.0.1",
+  "description": "wrapper packages most used for backend services",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hunandika/beer-sdk.git"
+  },
+  "keywords": [
+    "sdk"
+  ],
+  "author": "hunandikaadyota",
+  "email": "hunandikaadyota@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hunandika/beer-sdk/issues"
+  },
+  "homepage": "https://github.com/hunandika/beer-sdk#readme"
+}
