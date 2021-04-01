@@ -4,7 +4,8 @@
   "description": "wrapper packages most used for backend services",
   "main": "index.js",
   "scripts": {
-    "test": "jest i"
+    "lint": "./node_modules/.bin/eslint",
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,24 @@
   "bugs": {
     "url": "https://github.com/hunandika/beer-sdk/issues"
   },
-  "homepage": "https://github.com/hunandika/beer-sdk#readme"
+  "homepage": "https://github.com/hunandika/beer-sdk#readme",
+  "_moduleAliases": {
+    "@src": "src",
+    "@config": "src/config",
+    "@logger": "src/logger",
+    "@pJson": "package.json"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "bunyan-debug-stream": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "module-alias": "^2.2.2"
+  }
 }
