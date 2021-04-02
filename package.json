@@ -37,7 +37,9 @@
   "dependencies": {
     "bunyan": "^1.8.15",
     "bunyan-debug-stream": "^2.0.0",
+    "bunyan-slack": "^0.0.10",
     "dotenv": "^8.2.0",
+    "install": "^0.13.0",
     "module-alias": "^2.2.2"
   }
 }
