@@ -12,11 +12,16 @@ const defaultConfig = {
     ...defaultLog.full,
     ...defaultLog.production,
   },
+  test: {
+    ...defaultApp.full,
+    ...defaultLog.full,
+  },
 };
 
-const configSdk = (environment = 'production') => {
+const configSdk = (environment = 'production',envConfig={}) => {
   return {
     ...defaultConfig[environment],
+    ...envConfig,
   };
 };
 module.exports = configSdk;

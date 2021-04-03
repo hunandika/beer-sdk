@@ -4,7 +4,6 @@ const BunyanSlack = require('bunyan-slack');
 
 const logger = (config) => {
   const streams = [];
-  const ringBuffer = new bunyan.RingBuffer({ limit: config.LOG_RING_BUFFER_LIMIT });
 
   // bunyan stdout
   if (config.LOG_STDOUT_ENABLE) {
@@ -16,6 +15,7 @@ const logger = (config) => {
 
   // bunyan debug stream
   if (config.LOG_DEBUG_STREAM_ENABLE) {
+    /* istanbul ignore next */
     streams.push({
       level: config.LOG_DEBUG_STREAM_LEVEL,
       type: 'raw',
@@ -32,6 +32,7 @@ const logger = (config) => {
   // bunyan file rotating
   if (config.LOG_ROTATING_FILE_ENABLE) {
     streams.push({
+      level: config.LOG_ROTATING_STREAM_LEVEL,
       type: 'rotating-file',
       path: config.LOG_ROTATING_FILE_PATH,
       period: config.LOG_ROTATING_FILE_PERIOD, // daily rotation
@@ -41,6 +42,7 @@ const logger = (config) => {
 
   // bunyan slack notif
   if (config.LOG_SLACK_ENABLE) {
+    /* istanbul ignore next */
     const color = (levelName) => {
       switch (levelName) {
         case 'trace':
@@ -57,6 +59,7 @@ const logger = (config) => {
           return '#3F0F3F';
       }
     };
+    /* istanbul ignore next */
     streams.push({
       level: config.LOG_SLACK_LEVEL,
       stream: new BunyanSlack({
@@ -82,6 +85,7 @@ const logger = (config) => {
     });
   }
 
+  const ringBuffer = new bunyan.RingBuffer({ limit: config.LOG_RING_BUFFER_LIMIT });
   streams.push({
     level: config.LOG_RING_BUFFER_LEVEL,
     type: 'raw', // use 'raw' to get raw log record objects
