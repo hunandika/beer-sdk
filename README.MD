@@ -15,7 +15,7 @@ RoadMap:
 
   ## Inspirations
 
-- [hagopj13/node-express-boilerplate](https://github.com/hagopj13/node-express-boilerplate)
+- [ryanhs/ncurated](https://github.com/ryanhs/ncurated)
 
 ## License
 
