@@ -33,7 +33,7 @@ cache.wrap(
   function (cb) {
     getUser(userId, cb);
   },
-  {ttl:5},
+  {},
   function (err, user) {
     console.log(user);
   },
