@@ -15,7 +15,6 @@ const logger = (config) => {
 
   // bunyan debug stream
   if (config.LOG_DEBUG_STREAM_ENABLE) {
-    /* istanbul ignore next */
     streams.push({
       level: config.LOG_DEBUG_STREAM_LEVEL,
       type: 'raw',

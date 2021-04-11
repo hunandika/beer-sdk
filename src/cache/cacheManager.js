@@ -37,7 +37,8 @@ const cache = (config, log) => {
     );
   }
 
-  const globalCache = cacheManager.multiCaching(stores);
+  let globalCache = cacheManager.multiCaching(stores);
+  globalCache.stores = stores;
   log.info('cache connected!', {
     appName: config.APP_NAME,
     CACHE_MEMORY_ENABLE: config.CACHE_MEMORY_ENABLE,

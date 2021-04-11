@@ -1,6 +1,6 @@
 module.exports = {
   full: {
-    CACHE_MEMORY_ENABLE: true,
+    CACHE_MEMORY_ENABLE: false,
     CACHE_MEMORY_MAX: 1000,
     CACHE_MEMORY_TTL: 60,
 
@@ -20,13 +20,13 @@ module.exports = {
 
   },
   development: {
-    CACHE_MEMORY_ENABLE: true,
+    CACHE_MEMORY_ENABLE: false,
     CACHE_REDIS_ENABLE: false,
     CACHE_MONGO_ENABLE: true,
   },
   production: {
     CACHE_MEMORY_ENABLE: false,
-    CACHE_REDIS_ENABLE: true,
+    CACHE_REDIS_ENABLE: false,
     CACHE_MONGO_ENABLE: false,
   },
 };
