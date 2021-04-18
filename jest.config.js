@@ -1,5 +1,8 @@
+const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config({ path: path.resolve(process.cwd(), '.env.test')});
+
 module.exports = {
-  setupFiles: ['dotenv/config'],
   testEnvironment: 'node',
   testEnvironmentOptions: {
     NODE_ENV: 'test',

@@ -9,7 +9,7 @@ const defaultConfig = {
     ...defaultLog.development,
 
     ...defaultCache.full,
-    ...defaultCache.development
+    ...defaultCache.development,
   },
   production: {
     ...defaultApp.full,
@@ -17,7 +17,7 @@ const defaultConfig = {
     ...defaultLog.production,
 
     ...defaultCache.full,
-    ...defaultCache.production
+    ...defaultCache.production,
   },
   test: {
     ...defaultApp.full,
@@ -27,10 +27,25 @@ const defaultConfig = {
   },
 };
 
-const configSdk = (environment = 'development', envConfig = {}) => {
+const convertEnvBoolean = (val) => {
+  switch (val) {
+    case 'true':
+      return true;
+    case 'false':
+      return false;
+    default:
+      return val;
+  }
+};
+
+const configSdk = (environment = 'development') => {
+  const SDK_APP = /^SDK_/i;
+  const envConfig = Object.keys(process.env)
+    .filter((key) => SDK_APP.test(key))
+    .reduce((env, key) => ({ ...env, [key.replace(SDK_APP, '')]: convertEnvBoolean(process.env[key]) }), {});
   return {
     ...defaultConfig[environment],
-    ...envConfig,
+    ...envConfig
   };
 };
 module.exports = configSdk;

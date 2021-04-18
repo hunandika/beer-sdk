@@ -20,9 +20,9 @@ module.exports = {
 
   },
   development: {
-    CACHE_MEMORY_ENABLE: false,
+    CACHE_MEMORY_ENABLE: true,
     CACHE_REDIS_ENABLE: false,
-    CACHE_MONGO_ENABLE: true,
+    CACHE_MONGO_ENABLE: false,
   },
   production: {
     CACHE_MEMORY_ENABLE: false,

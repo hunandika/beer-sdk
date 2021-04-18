@@ -1,13 +1,13 @@
-require('module-alias/register');
+require('module-alias/register')
 
-require('dotenv').config();
-const configSdk = require('@config');
-const config = configSdk(process.env.NODE_ENV);
-const logger = require('@logger');
-const cacheManager = require('@cache');
+const configSdk = require('@config')
+const config = configSdk()
+const logger = require('@logger')
+const cacheManager = require('@cache')
 
-const log = logger(config);
-const cache = cacheManager(config, log);
+
+const log = logger(config)
+const cache = cacheManager(config,log)
 // log.error('hello')
 // log.trace({foo:'hunandika',bar:'asd'},'test warn')
 // log.debug({foo:'hunandika',bar:'asd'},'test warn')
@@ -15,6 +15,7 @@ const cache = cacheManager(config, log);
 // log.warn({foo:'hunandika',bar:'asd'},'test warn')
 // log.error({foo:'hunandika',bar:'asd'},'test warn')
 // log.fatal({foo:'hunandika',bar:'asd'},'test warn')
+
 
 function getUser(id, cb) {
   setTimeout(function () {
