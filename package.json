@@ -1,8 +1,11 @@
 {
   "name": "beer-sdk",
   "version": "0.0.1",
-  "description": "wrapper packages most used for backend services",
+  "description": "Wrapper package Node.js app most used for backend services",
   "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "lint": "./node_modules/.bin/eslint",
     "test": "jest -i --watchAll --coverage",
@@ -13,7 +16,13 @@
     "url": "git+https://github.com/hunandika/beer-sdk.git"
   },
   "keywords": [
-    "sdk"
+    "sdk",
+    "logger",
+    "slack-logger-notif",
+    "bunyan-logger",
+    "cache-manager",
+    "cache-redis-store",
+    "cache-mongodb"
   ],
   "author": "hunandikaadyota",
   "email": "hunandikaadyota@gmail.com",
