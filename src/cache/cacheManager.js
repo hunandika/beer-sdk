@@ -6,7 +6,13 @@ const cache = (config, log) => {
   let stores = [];
 
   if (config.CACHE_MEMORY_ENABLE) {
-    stores.push(cacheManager.caching({ store: 'memory', max: config.CACHE_MEMORY_MAX, ttl: config.CACHE_MEMORY_TTL }));
+    stores.push(
+      cacheManager.caching({
+        store: 'memory',
+        max: parseInt(config.CACHE_MEMORY_MAX) || 1000,
+        ttl: parseInt(config.CACHE_MEMORY_TTL) || 60,
+      }),
+    );
   }
 
   if (config.CACHE_REDIS_ENABLE) {
@@ -31,7 +37,7 @@ const cache = (config, log) => {
           collection: config.CACHE_MONGO_COLLECTION,
           compression: config.CACHE_MONGO_COMPRESSION,
           poolSize: config.CACHE_MONGO_POOL_SIZE,
-          ttl: config.CACHE_MONGO_TTL
+          ttl: config.CACHE_MONGO_TTL,
         },
       }),
     );

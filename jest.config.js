@@ -1,6 +1,6 @@
 const path = require('path');
 const dotenv = require('dotenv');
-dotenv.config({ path: path.resolve(process.cwd(), '.env.test')});
+dotenv.config({ path: path.resolve(process.cwd(), '.env.test') });
 
 module.exports = {
   testEnvironment: 'node',
@@ -8,7 +8,7 @@ module.exports = {
     NODE_ENV: 'test',
   },
   restoreMocks: true,
-  coveragePathIgnorePatterns: ['node_modules', 'src/config', 'coverage'],
+  coveragePathIgnorePatterns: ['node_modules', 'src/config', 'coverage', 'rollup.config.js', 'dist', 'src/index*'],
   coverageReporters: ['text', 'lcov', 'clover', 'html'],
   collectCoverageFrom: ['**/*.{js,jsx}', '!**/node_modules/**', '!**/.eslintrc.*', '!**/jest.*', '!**/vendor/**'],
   moduleNameMapper: {

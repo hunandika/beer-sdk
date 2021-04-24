@@ -7,6 +7,7 @@
 
 # misc
 .env
+.env.test
 .fuse_hidden*
 
 npm-debug.log*
@@ -15,3 +16,5 @@ yarn-error.log*
 yarn.lock
 
 jest.env
+
+index.local.js
