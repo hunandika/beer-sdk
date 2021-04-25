@@ -1,15 +1,16 @@
+dist: bionic
 language: node_js
 node_js:
   - '10'
-  - '12'
 services:
   - mongodb
   - redis-server
-cache: yarn
+cache: npm
 branches:
   only:
     - development
 before_script:
+  - npm install
   # check version
   - node --version
   - mongo --version
@@ -17,5 +18,4 @@ before_script:
   #copy default config testing
   - cp env.test.example .env.test
 script:
-  - yarn
-  - yarn test
+  - npm run test
