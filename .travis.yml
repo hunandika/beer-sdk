@@ -10,13 +10,12 @@ branches:
   only:
     - development
 before_script:
-  - echo -e "machine github.ibm.com\n  login $GIT_TOKEN" > ~/.netrc
-  - npm install
   # check version
   - node --version
+  - npm --version
   - mongo --version
 
   #copy default config testing
-  - cp env.test.example .env.test
+  - cp .env.test.example .env.test
 script:
   - npm run test
