@@ -3,12 +3,6 @@ const configSdk = require('@config');
 const logger = require('@logger');
 const cacheManager = require('./cacheManager');
 
-// const mockCache = (mockConfig = {}) => {
-//   const config = configSdk(process.env.NODE_ENV, mockConfig);
-//   const log = logger(config);
-//   return cacheManager(config, log);
-// };
-
 let cache;
 const userId = 123;
 const key = 'user_' + userId;

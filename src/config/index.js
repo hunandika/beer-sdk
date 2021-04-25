@@ -23,7 +23,6 @@ const defaultConfig = {
     ...defaultApp.full,
     ...defaultLog.full,
     ...defaultCache.full,
-    ...defaultCache.full,
   },
 };
 

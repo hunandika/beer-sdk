@@ -12,6 +12,7 @@ describe('Logger Testing', () => {
   });
 
   afterAll(async () => await del(['src/logger/*.log']));
+  
   it('test LOG_STDOUT_ENABLE', () => {
     expect(log.trace()).toBeTruthy();
     expect(log.debug()).toBeTruthy();

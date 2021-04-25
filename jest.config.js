@@ -8,7 +8,7 @@ module.exports = {
     NODE_ENV: 'test',
   },
   restoreMocks: true,
-  coveragePathIgnorePatterns: ['node_modules', 'src/config', 'coverage', 'rollup.config.js', 'dist', 'src/index*'],
+  coveragePathIgnorePatterns: ['node_modules', 'src/config', 'coverage', 'rollup.config.js', 'dist', 'src/index.local*'],
   coverageReporters: ['text', 'lcov', 'clover', 'html'],
   collectCoverageFrom: ['**/*.{js,jsx}', '!**/node_modules/**', '!**/.eslintrc.*', '!**/jest.*', '!**/vendor/**'],
   moduleNameMapper: {

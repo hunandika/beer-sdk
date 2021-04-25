@@ -12,6 +12,5 @@ const globalSdk = {
   log,
   cache
 }
-global.sdkLog = log;
-global.sdkCache = cache;
+global.sdk = globalSdk;
 module.exports = globalSdk
