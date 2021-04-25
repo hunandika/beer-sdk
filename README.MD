@@ -1,7 +1,7 @@
   
 
 # Beer-Sdk
-
+[![Coverage Status](https://coveralls.io/repos/github/hunandika/beer-sdk/badge.svg?branch=master)](https://coveralls.io/github/hunandika/beer-sdk?branch=master)
 ## Wrapper package Node.js app most used for backend services
 
   

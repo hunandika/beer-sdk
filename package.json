@@ -8,8 +8,10 @@
   ],
   "scripts": {
     "lint": "./node_modules/.bin/eslint",
-    "test": "jest -i --watchAll --coverage",
-    "build": "rm -rf dist && rollup -c"
+    "test": "jest -i --coverage --detectOpenHandles --forceExit",
+    "test:watch": "jest -i --watchAll --coverage",
+    "build": "rm -rf dist && rollup -c",
+    "test:coveralls": "jest --coverage --detectOpenHandles && coveralls < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -43,6 +45,7 @@
     "@rollup/plugin-commonjs": "^18.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
+    "coveralls": "^3.1.0",
     "del": "^6.0.0",
     "eslint": "^7.23.0",
     "eslint-plugin-import": "^2.22.1",
@@ -62,5 +65,8 @@
     "dotenv": "^8.2.0",
     "install": "^0.13.0",
     "module-alias": "^2.2.2"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
