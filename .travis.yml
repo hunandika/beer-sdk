@@ -17,4 +17,5 @@ before_script:
   #copy default config testing
   - cp env.test.example .env.test
 script:
+  - yarn
   - yarn test
