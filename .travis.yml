@@ -10,6 +10,7 @@ branches:
   only:
     - development
 before_script:
+  - echo -e "machine github.ibm.com\n  login $GIT_TOKEN" > ~/.netrc
   - npm install
   # check version
   - node --version
