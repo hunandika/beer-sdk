@@ -11,7 +11,7 @@
     "test": "jest -i --coverage --detectOpenHandles --forceExit",
     "test:watch": "jest -i --watchAll --coverage",
     "build": "rm -rf dist && rollup -c",
-    "test:coveralls": "jest --coverage --detectOpenHandles && coveralls < coverage/lcov.info"
+    "test:coveralls": "jest --coverage --detectOpenHandles --forceExit && coveralls < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -41,7 +41,6 @@
     "@pJson": "package.json"
   },
   "devDependencies": {
-    "rollup": "^2.45.2",
     "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-commonjs": "^18.0.0",
     "@rollup/plugin-json": "^4.1.0",
@@ -54,6 +53,7 @@
     "javascript-obfuscator": "^0.18.1",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
+    "rollup": "^2.45.2",
     "rollup-plugin-obfuscator": "^0.2.0"
   },
   "dependencies": {
