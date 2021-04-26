@@ -1,17 +1,31 @@
 {
   "name": "beer-sdk",
-  "version": "0.0.1",
-  "description": "wrapper packages most used for backend services",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Wrapper package Node.js app most used for backend services",
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "test": "jest i"
+    "lint": "./node_modules/.bin/eslint",
+    "test": "jest -i --coverage --detectOpenHandles --forceExit",
+    "test:watch": "jest -i --watchAll --coverage",
+    "build": "rm -rf dist && rollup -c",
+    "test:coveralls": "jest --ci --coverage --detectOpenHandles --forceExit && coveralls < coverage/lcov.info",
+    "test:codecov": "jest --ci --coverage --detectOpenHandles --forceExit"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hunandika/beer-sdk.git"
   },
   "keywords": [
-    "sdk"
+    "sdk",
+    "logger",
+    "slack-logger-notif",
+    "bunyan-logger",
+    "cache-manager",
+    "cache-redis-store",
+    "cache-mongodb"
   ],
   "author": "hunandikaadyota",
   "email": "hunandikaadyota@gmail.com",
@@ -19,5 +33,42 @@
   "bugs": {
     "url": "https://github.com/hunandika/beer-sdk/issues"
   },
-  "homepage": "https://github.com/hunandika/beer-sdk#readme"
+  "homepage": "https://github.com/hunandika/beer-sdk#readme",
+  "_moduleAliases": {
+    "@src": "src",
+    "@config": "src/config",
+    "@logger": "src/logger/logger",
+    "@cache": "src/cache/cacheManager",
+    "@pJson": "package.json"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.2",
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "coveralls": "^3.1.0",
+    "del": "^6.0.0",
+    "eslint": "^7.23.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "javascript-obfuscator": "^0.18.1",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "rollup": "^2.45.2",
+    "rollup-plugin-obfuscator": "^0.2.0"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "bunyan-debug-stream": "^2.0.0",
+    "bunyan-slack": "^0.0.10",
+    "cache-manager": "^3.4.3",
+    "cache-manager-mongodb": "github:hunandika/node-cache-manager-mongodb",
+    "cache-manager-redis-store": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "install": "^0.13.0",
+    "module-alias": "^2.2.2"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
 }
