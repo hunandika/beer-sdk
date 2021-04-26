@@ -1,10 +1,12 @@
   
 
 # Beer-Sdk
-[![Coverage Status](https://coveralls.io/repos/github/hunandika/beer-sdk/badge.svg?branch=master)](https://coveralls.io/github/hunandika/beer-sdk?branch=master)
+[![Build Status](https://travis-ci.com/hunandika/beer-sdk.svg?branch=master)](https://travis-ci.com/hunandika/beer-sdk)
+[![codecov](https://codecov.io/gh/hunandika/beer-sdk/branch/master/graph/badge.svg?token=1D62LYXFWD)](https://codecov.io/gh/hunandika/beer-sdk)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
 ## Wrapper package Node.js app most used for backend services
 
-  
 
 This is just a collection list node js package most used. If you create node js from scratch you can avoid DRY (Don't Repeat Yourself) to configure like logger, cache, etc..
 
