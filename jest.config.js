@@ -8,7 +8,14 @@ module.exports = {
     NODE_ENV: 'test',
   },
   restoreMocks: true,
-  coveragePathIgnorePatterns: ['node_modules', 'src/config', 'coverage', 'rollup.config.js', 'dist', 'src/index.local*'],
+  coveragePathIgnorePatterns: [
+    'node_modules',
+    'src/config',
+    'coverage',
+    'rollup.config.js',
+    'dist',
+    'src/index.local*',
+  ],
   coverageReporters: ['text', 'lcov', 'clover', 'html'],
   collectCoverageFrom: ['**/*.{js,jsx}', '!**/node_modules/**', '!**/.eslintrc.*', '!**/jest.*', '!**/vendor/**'],
   moduleNameMapper: {
@@ -18,4 +25,6 @@ module.exports = {
     '@cache': '<rootDir>/src/cache/cacheManager',
     '@pJson': '<rootDir>/package.json',
   },
+  coverageDirectory: './coverage/',
+  collectCoverage: true,
 };

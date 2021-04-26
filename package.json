@@ -11,7 +11,8 @@
     "test": "jest -i --coverage --detectOpenHandles --forceExit",
     "test:watch": "jest -i --watchAll --coverage",
     "build": "rm -rf dist && rollup -c",
-    "test:coveralls": "jest --coverage --detectOpenHandles --forceExit && coveralls < coverage/lcov.info"
+    "test:coveralls": "jest --ci --coverage --detectOpenHandles --forceExit && coveralls < coverage/lcov.info",
+    "test:codecov": "jest --ci --coverage --detectOpenHandles --forceExit"
   },
   "repository": {
     "type": "git",

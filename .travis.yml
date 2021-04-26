@@ -21,6 +21,5 @@ before_script:
   #copy default config testing
   - cp .env.test.example .env.test
 script:
-  - echo "service_name: $COVERALLS_SERVICE_NAME" >> .coveralls.yml
-  - echo "repo_token: $COVERALLS_REPO_TOKEN" >> .coveralls.yml
   - yarn test:coveralls
+  - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
