@@ -1,16 +1,16 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import pkg from './package.json';
 import alias from '@rollup/plugin-alias';
 import json from '@rollup/plugin-json';
 import obfuscator from 'rollup-plugin-obfuscator';
+import pkg from './package.json';
 
 const external = Object.keys(pkg.dependencies);
 
 export default [
   {
     input: 'src/index.js',
-    external: external,
+    external,
     plugins: [
       commonjs({ ignoreDynamicRequires: true }),
       resolve({ extensions: ['.js'], exclude: 'node_modules/**' }),
