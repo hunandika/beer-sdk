@@ -1,5 +1,3 @@
-  
-
 # Beer-Sdk
 [![Build Status](https://travis-ci.com/hunandika/beer-sdk.svg?branch=master)](https://travis-ci.com/hunandika/beer-sdk)
 [![codecov](https://codecov.io/gh/hunandika/beer-sdk/branch/master/graph/badge.svg?token=1D62LYXFWD)](https://codecov.io/gh/hunandika/beer-sdk)
@@ -7,45 +5,36 @@
 
 ## Wrapper package Node.js app most used for backend services
 
-
 This is just a collection list node js package most used. If you create node js from scratch you can avoid DRY (Don't Repeat Yourself) to configure like logger, cache, etc..
-
-  
 
 ## Features
 
-
 - Logging: using [bunyan](https://www.npmjs.com/package/bunyan)
-	-  [bunyan-slack](https://www.npmjs.com/package/bunyan-slack)
-	-  [bunyan-debug-stream](https://www.npmjs.com/package/bunyan-debug-stream)
+	- [bunyan-slack](https://www.npmjs.com/package/bunyan-slack)
+	- [bunyan-debug-stream](https://www.npmjs.com/package/bunyan-debug-stream)
 - Cache: using [cache-manager](https://www.npmjs.com/package/cache-manager)
-	-  [cache-manager-mongodb](https://www.npmjs.com/package/cache-manager-mongodb)
-	-  [cache-manager-redis-store](https://www.npmjs.com/package/cache-manager-redis-store)
+	- [cache-manager-mongodb](https://www.npmjs.com/package/cache-manager-mongodb)
+	- [cache-manager-redis-store](https://www.npmjs.com/package/cache-manager-redis-store)
 	- Cache memory
-
-  
 
 ## Installation
 
-  
 npm install sdk@npm:beer-sdk --save
 
 or
 
 yarn add sdk@npm:beer-sdk
-  
 
 ## Usage Examples
 
 Please attach this code to root/parent js code.
 See examples below on how to implement the Beer sdk.
 
-
 ### Index.js or App.js
 
     require('sdk');
 
-#### *Note: this code just only called only once in root js project!!!
+#### *Note: this code just only called only once in root js project
 
 only once import this code you can use sdk feature on all file js without confused with much config. It's Magic!!! :laughing:
 
@@ -58,8 +47,6 @@ only once import this code you can use sdk feature on all file js without confus
     sdk.log.warn('warn log')
     sdk.log.error('error log')
     sdk.log.fatal('fatal log')
-
-  
 
 ### Cache-Manager
 
@@ -146,18 +133,13 @@ Default Config Cache
     SDK_CACHE_MONGO_ENABLE=false
 
 ##### *Note: You can override this config with adding to .env your project using prefix SDK_
-  
 
 ## Contribution
-  
 
 Want to help improve this package? We take [pull requests](https://github.com/hunandika/beer-sdk/pulls).
 
-
 ## License
 
-
 [MIT](LICENSE)
-
 
 **Free Software, Hell Yeah!**
