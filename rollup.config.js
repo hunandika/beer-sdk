@@ -41,7 +41,7 @@ export default [
           simplify: true,
           splitStrings: false,
           stringArray: true,
-          stringArrayEncoding: [],
+          stringArrayEncoding: true,
           stringArrayIndexShift: true,
           stringArrayWrappersCount: 1,
           stringArrayWrappersChainedCalls: true,
