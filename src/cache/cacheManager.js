@@ -9,8 +9,8 @@ const cache = (config, log) => {
     stores.push(
       cacheManager.caching({
         store: 'memory',
-        max: parseInt(config.CACHE_MEMORY_MAX, 10) || 1000,
-        ttl: parseInt(config.CACHE_MEMORY_TTL) || 60,
+        max: parseInt(config.CACHE_MEMORY_MAX) || 1000,
+        ttl: parseInt(config.CACHE_MEMORY_TTL, 10) || 60,
       }),
     );
   }
