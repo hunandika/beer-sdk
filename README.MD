@@ -1,6 +1,7 @@
   
 
 # Beer-Sdk
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f0ace2d60bef430a84ce8320a392a6e9)](https://app.codacy.com/gh/hunandika/beer-sdk?utm_source=github.com&utm_medium=referral&utm_content=hunandika/beer-sdk&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://travis-ci.com/hunandika/beer-sdk.svg?branch=master)](https://travis-ci.com/hunandika/beer-sdk)
 [![codecov](https://codecov.io/gh/hunandika/beer-sdk/branch/master/graph/badge.svg?token=1D62LYXFWD)](https://codecov.io/gh/hunandika/beer-sdk)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
