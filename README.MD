@@ -1,6 +1,7 @@
 # Beer-Sdk
 [![Build Status](https://travis-ci.com/hunandika/beer-sdk.svg?branch=master)](https://travis-ci.com/hunandika/beer-sdk)
 [![codecov](https://codecov.io/gh/hunandika/beer-sdk/branch/master/graph/badge.svg?token=1D62LYXFWD)](https://codecov.io/gh/hunandika/beer-sdk)
+[![CodeFactor](https://www.codefactor.io/repository/github/hunandika/beer-sdk/badge)](https://www.codefactor.io/repository/github/hunandika/beer-sdk)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 ## Wrapper package Node.js app most used for backend services
