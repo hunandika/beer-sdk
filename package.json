@@ -7,23 +7,14 @@
     "dist/"
   ],
   "scripts": {
-    "lint": "./node_modules/.bin/eslint",
+    "lint": "eslint '**/*.js' --fix",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.js' --write",
     "test": "jest -i --coverage --detectOpenHandles --forceExit",
     "test:watch": "jest -i --watchAll --coverage",
     "build": "rm -rf dist && rollup -c",
     "test:coveralls": "jest --ci --coverage --detectOpenHandles --forceExit && coveralls < coverage/lcov.info",
-    "test:codecov": "jest --ci --coverage --detectOpenHandles --forceExit"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.js": [
-      "eslint --fix",
-      "git add"
-    ]
+    "test:codecov": "jest --ci --coverage --detectOpenHandles --forceExit",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",

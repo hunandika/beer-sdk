@@ -26,7 +26,7 @@ const defaultConfig = {
   },
 };
 
-const convertEnvBoolean = (val) => {
+const convertEnvBoolean = val => {
   switch (val) {
     case 'true':
       return true;
@@ -40,7 +40,7 @@ const convertEnvBoolean = (val) => {
 const configSdk = (environment = 'development') => {
   const SDK_APP = /^SDK_/i;
   const envConfig = Object.keys(process.env)
-    .filter((key) => SDK_APP.test(key))
+    .filter(key => SDK_APP.test(key))
     .reduce((env, key) => ({ ...env, [key.replace(SDK_APP, '')]: convertEnvBoolean(process.env[key]) }), {});
   return {
     ...defaultConfig[environment],

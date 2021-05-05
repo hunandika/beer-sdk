@@ -2,7 +2,7 @@ const bunyan = require('bunyan');
 const bunyanDebugStream = require('bunyan-debug-stream');
 const BunyanSlack = require('bunyan-slack');
 
-const logger = (config) => {
+const logger = config => {
   const streams = [];
 
   // bunyan stdout
@@ -21,7 +21,7 @@ const logger = (config) => {
       stream: bunyanDebugStream({
         basepath: __dirname, // this should be the root folder of your project.
         forceColor: true,
-        showDate: (time) =>
+        showDate: time =>
           /* istanbul ignore next */
           time.toISOString(),
       }),
@@ -42,7 +42,7 @@ const logger = (config) => {
   // bunyan slack notif
   if (config.LOG_SLACK_ENABLE) {
     /* istanbul ignore next */
-    const color = (levelName) => {
+    const color = levelName => {
       switch (levelName) {
         case 'trace':
           return '#80D2DE';

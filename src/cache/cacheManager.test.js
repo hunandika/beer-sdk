@@ -9,7 +9,7 @@ const key = `user_${userId}`;
 const userData = { id: userId, name: 'Bob' };
 
 describe('Cache Manager Testing', () => {
-  afterAll((done) => {
+  afterAll(done => {
     done();
   });
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('Cache Manager Testing', () => {
     cache = cacheManager(config, log);
   });
 
-  it('test CACHE_MEMORY_ENABLE', async (done) => {
+  it('test CACHE_MEMORY_ENABLE', async done => {
     await cache.set(key, { id: userId, name: 'Bob' });
     const data = await cache.get(key);
     expect(data).toEqual(userData);
@@ -26,7 +26,7 @@ describe('Cache Manager Testing', () => {
     done();
   });
 
-  it('test CACHE_REDIS_ENABLE', async (done) => {
+  it('test CACHE_REDIS_ENABLE', async done => {
     await cache.set(key, { id: userId, name: 'Bob' });
     const data = await cache.get(key);
     expect(data).toEqual(userData);
@@ -34,7 +34,7 @@ describe('Cache Manager Testing', () => {
     done();
   });
 
-  it('test CACHE_MONGO_ENABLE', async (done) => {
+  it('test CACHE_MONGO_ENABLE', async done => {
     await cache.set(key, { id: userId, name: 'Bob' });
     const data = await cache.get(key);
     expect(data).toEqual(userData);
