@@ -12,7 +12,7 @@ describe('Logger Testing', () => {
   });
 
   afterAll(async () => await del(['src/logger/*.log']));
-  
+
   it('test LOG_STDOUT_ENABLE', () => {
     expect(log.trace()).toBeTruthy();
     expect(log.debug()).toBeTruthy();
@@ -24,7 +24,7 @@ describe('Logger Testing', () => {
 
   it('test LOG_DEBUG_STREAM_ENABLE', () => {
     expect(log.streams[1].stream.options).toMatchObject({
-      showDate: expect.any(Function)
+      showDate: expect.any(Function),
     });
     expect(log.trace()).toBeTruthy();
     expect(log.debug()).toBeTruthy();

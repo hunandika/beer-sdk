@@ -4,5 +4,9 @@
   "singleQuote": true,
   "printWidth": 120,
   "tabWidth": 2,
-  "semicolons": true
+  "useTabs": false,
+  "quoteProps": "as-needed",
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "endOfLine": "auto"
 }

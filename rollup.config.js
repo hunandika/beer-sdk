@@ -1,22 +1,16 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import pkg from './package.json';
 import alias from '@rollup/plugin-alias';
 import json from '@rollup/plugin-json';
 import obfuscator from 'rollup-plugin-obfuscator';
+import pkg from './package.json';
 
 const external = Object.keys(pkg.dependencies);
 
 export default [
-  // CommonJS (for Node) and ES module (for bundlers) build.
-  // (We could have three entries in the configuration array
-  // instead of two, but it's quicker to generate multiple
-  // builds from a single configuration where possible, using
-  // an array for the `output` option, where we can specify
-  // `file` and `format` for each target)
   {
     input: 'src/index.js',
-    external: external,
+    external,
     plugins: [
       commonjs({ ignoreDynamicRequires: true }),
       resolve({ extensions: ['.js'], exclude: 'node_modules/**' }),
@@ -47,7 +41,7 @@ export default [
           simplify: true,
           splitStrings: false,
           stringArray: true,
-          stringArrayEncoding: [],
+          stringArrayEncoding: true,
           stringArrayIndexShift: true,
           stringArrayWrappersCount: 1,
           stringArrayWrappersChainedCalls: true,

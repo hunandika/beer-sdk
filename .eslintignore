@@ -1,0 +1,6 @@
+node_modules/**
+dist/**
+coverage/**
+**/*.test.*
+index.local.js
+rollup.config.js
