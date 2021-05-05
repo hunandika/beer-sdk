@@ -21,10 +21,9 @@ const logger = (config) => {
       stream: bunyanDebugStream({
         basepath: __dirname, // this should be the root folder of your project.
         forceColor: true,
-        showDate: (time) => {
+        showDate: (time) =>
           /* istanbul ignore next */
-          return time.toISOString();
-        },
+          time.toISOString(),
       }),
     });
   }
@@ -36,7 +35,7 @@ const logger = (config) => {
       type: 'rotating-file',
       path: config.LOG_ROTATING_FILE_PATH,
       period: config.LOG_ROTATING_FILE_PERIOD, // daily rotation
-      count: parseInt(config.LOG_ROTATING_FILE_COUNT) || 3, // keep 3 back copies
+      count: parseInt(config.LOG_ROTATING_FILE_COUNT, 10) || 3, // keep 3 back copies
     });
   }
 
@@ -57,6 +56,8 @@ const logger = (config) => {
           return '#D40E0D';
         case 'fatal':
           return '#3F0F3F';
+        default:
+          return '#80D2DE';
       }
     };
     /* istanbul ignore next */
@@ -64,7 +65,7 @@ const logger = (config) => {
       level: config.LOG_SLACK_LEVEL,
       stream: new BunyanSlack({
         webhook_url: config.LOG_SLACK_WEBHOOK_URL,
-        customFormatter: function (record, levelName) {
+        customFormatter(record, levelName) {
           return {
             attachments: [
               {
@@ -73,7 +74,7 @@ const logger = (config) => {
                 title: record.msg,
                 fields: [
                   {
-                    title: 'We have a new ' + levelName + ' log',
+                    title: `We have a new ${levelName} log`,
                     value: JSON.stringify(record),
                   },
                 ],
@@ -85,7 +86,7 @@ const logger = (config) => {
     });
   }
 
-  const ringBuffer = new bunyan.RingBuffer({ limit: parseInt(config.LOG_RING_BUFFER_LIMIT) || 100 });
+  const ringBuffer = new bunyan.RingBuffer({ limit: parseInt(config.LOG_RING_BUFFER_LIMIT, 10) || 100 });
   streams.push({
     level: config.LOG_RING_BUFFER_LEVEL,
     type: 'raw', // use 'raw' to get raw log record objects
@@ -94,7 +95,7 @@ const logger = (config) => {
 
   const bunyanConfig = bunyan.createLogger({
     name: config.APP_NAME,
-    streams: streams,
+    streams,
     serializers: bunyanDebugStream.stdSerializers,
   });
   bunyanConfig.ringBuffer = ringBuffer;

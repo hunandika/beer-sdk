@@ -3,14 +3,14 @@ const redisStore = require('cache-manager-redis-store');
 const mongoStore = require('cache-manager-mongodb');
 
 const cache = (config, log) => {
-  let stores = [];
+  const stores = [];
 
   if (config.CACHE_MEMORY_ENABLE) {
     stores.push(
       cacheManager.caching({
         store: 'memory',
-        max: parseInt(config.CACHE_MEMORY_MAX) || 1000,
-        ttl: parseInt(config.CACHE_MEMORY_TTL) || 60,
+        max: parseInt(config.CACHE_MEMORY_MAX, 10) || 1000,
+        ttl: parseInt(config.CACHE_MEMORY_TTL, 10) || 60,
       }),
     );
   }
@@ -43,7 +43,7 @@ const cache = (config, log) => {
     );
   }
 
-  let globalCache = cacheManager.multiCaching(stores);
+  const globalCache = cacheManager.multiCaching(stores);
   globalCache.stores = stores;
   log.info('cache connected!', {
     appName: config.APP_NAME,

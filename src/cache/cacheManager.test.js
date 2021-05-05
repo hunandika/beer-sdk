@@ -5,13 +5,13 @@ const cacheManager = require('./cacheManager');
 
 let cache;
 const userId = 123;
-const key = 'user_' + userId;
+const key = `user_${userId}`;
 const userData = { id: userId, name: 'Bob' };
 
 describe('Cache Manager Testing', () => {
-  afterAll(done => {
-    done()
-  })
+  afterAll((done) => {
+    done();
+  });
   beforeEach(() => {
     const config = configSdk(process.env.NODE_ENV);
     log = logger(config);

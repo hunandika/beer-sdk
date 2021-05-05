@@ -44,7 +44,7 @@ const configSdk = (environment = 'development') => {
     .reduce((env, key) => ({ ...env, [key.replace(SDK_APP, '')]: convertEnvBoolean(process.env[key]) }), {});
   return {
     ...defaultConfig[environment],
-    ...envConfig
+    ...envConfig,
   };
 };
 module.exports = configSdk;
