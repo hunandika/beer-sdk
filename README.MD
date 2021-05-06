@@ -3,6 +3,7 @@
 [![codecov](https://codecov.io/gh/hunandika/beer-sdk/branch/master/graph/badge.svg?token=1D62LYXFWD)](https://codecov.io/gh/hunandika/beer-sdk)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e46a8f37c44a4057b0499f12c6ea723f)](https://www.codacy.com/gh/hunandika/beer-sdk/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hunandika/beer-sdk&amp;utm_campaign=Badge_Grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/hunandika/beer-sdk/badge)](https://www.codefactor.io/repository/github/hunandika/beer-sdk)
+[![Known Vulnerabilities](https://snyk.io/test/github/hunandika/beer-sdk/badge.svg)](https://snyk.io/test/github/hunandika/beer-sdk)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 ## Wrapper package Node.js app most used for backend services

@@ -24,3 +24,4 @@ script:
   - yarn build
   - yarn test:codecov
   - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh) report coverage/lcov.info
