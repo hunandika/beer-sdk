@@ -19,6 +19,9 @@ This is just a collection list node js package most used. If you create node js 
     - [cache-manager-mongodb](https://www.npmjs.com/package/cache-manager-mongodb)
     - [cache-manager-redis-store](https://www.npmjs.com/package/cache-manager-redis-store)
     - Cache memory
+- MongPlug: Mongoose Plugins
+    - toJSON
+    - Paginate
 
 ## Installation
 
