@@ -12,5 +12,8 @@ module.exports = {
     'prettier/prettier': ['error'],
     'import/no-unresolved': 'off',
     'rest-spread-spacing': ['error', 'never'],
+    'no-underscore-dangle': 'off',
+    'consistent-return': 'off',
+    'func-names': 'off',
   },
 };
