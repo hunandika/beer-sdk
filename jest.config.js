@@ -24,6 +24,7 @@ module.exports = {
     '@config': '<rootDir>/src/config',
     '@logger': '<rootDir>/src/logger/logger',
     '@cache': '<rootDir>/src/cache/cacheManager',
+    '@mongPlug': '<rootDir>/src/mongoose_plugin',
     '@pJson': '<rootDir>/package.json',
   },
   coverageDirectory: './coverage/',

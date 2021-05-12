@@ -6,10 +6,12 @@ describe('Index root Testing', () => {
   it('test root SDK', async () => {
     expect(sdk).toHaveProperty('log');
     expect(sdk).toHaveProperty('cache');
-    expect(global.sdk).toHaveProperty('log');
-    expect(global.sdk).toHaveProperty('cache');
-    expect(sdk.log).toBeTruthy();
-    expect(sdk.cache).toBeTruthy();
-    expect(global.sdk).toBeTruthy();
+    expect(sdk).toHaveProperty('mongPlug');
+    expect(global).toHaveProperty('sdkLog');
+    expect(global).toHaveProperty('sdkCache');
+    expect(global).toHaveProperty('sdkMongplug');
+    expect(global.sdkLog).toBeTruthy();
+    expect(global.sdkCache).toBeTruthy();
+    expect(global.sdkMongplug).toBeTruthy();
   });
 });

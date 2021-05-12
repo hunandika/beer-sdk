@@ -20,6 +20,7 @@ export default [
           { find: '@config', replacement: 'src/config/index.js' },
           { find: '@logger', replacement: 'src/logger/logger.js' },
           { find: '@cache', replacement: 'src/cache/cacheManager.js' },
+          { find: '@mongPlug', replacement: 'src/mongoose_plugin/index.js' },
           { find: '@pJson', replacement: 'package.json' },
         ],
       }),

@@ -44,19 +44,19 @@ only once import this code you can use sdk feature on all file js without confus
 ### Logger
 
     //log example
-    sdk.log.trace('trace log')
-    sdk.log.debug('debug log')
-    sdk.log.info('info log')
-    sdk.log.warn('warn log')
-    sdk.log.error('error log')
-    sdk.log.fatal('fatal log')
+    sdkLog.trace('trace log')
+    sdkLog.debug('debug log')
+    sdkLog.info('info log')
+    sdkLog.warn('warn log')
+    sdkLog.error('error log')
+    sdkLog.fatal('fatal log')
 
 ### Cache-Manager
 
     // cache example
     function getUser(id, cb) {
     	setTimeout(function () {
-			sdk.log.info('Returning user from slow database.');
+			sdkLog.info('Returning user from slow database.');
 			cb(null, { id: id, name: 'Bob' });
     	}, 100);
     }
@@ -65,18 +65,71 @@ only once import this code you can use sdk feature on all file js without confus
     var key = 'user_' + userId;
     
     // Note: ttl is optional in wrap()
-    sdk.cache.wrap(key, function (cb) {
+    sdkCache.wrap(key, function (cb) {
     	getUser(userId, cb);
     }, { ttl: 5 }, function (err, user) {
-    	sdk.log.info(user);
+    	sdkLog.info(user);
     })
     
     // Second time fetches user from memoryCache
-    sdk.cache.wrap(key,function (cb) {
+    sdkCache.wrap(key,function (cb) {
     	getUser(userId, cb);
     }, function (err, user) {
-    	sdk.log.info(user);
+    	sdkLog.info(user);
     });
+
+### Custom Mongoose Plugins
+`sdkMongplug` is mongoose plugins that you can attach to any mongoose model schema.
+
+    const mongoose = require('mongoose');
+
+    const userSchema = mongoose.Schema(
+    {
+        /* schema definition here */
+    },
+    { timestamps: true }
+    );
+
+    userSchema.plugin(sdkMongplug.toJSON);
+    userSchema.plugin(sdkMongplug.paginate);
+
+    const User = mongoose.model('User', userSchema);
+
+### toJSON
+The toJSON plugin applies transform to JSON format and removes field following __v, createdAt, updatedAt, and any schema path that has private: true
+replaces _id with id
+
+### paginate
+The paginate plugin adds the `paginate` static method to the mongoose schema.
+
+Adding this plugin to the `User` model schema will allow you to do the following:
+
+    const queryUsers = async (filter, options) => {
+        const users = await User.paginate(filter, options);
+        return users;
+    };
+
+The `filter` param is a regular mongo filter.
+
+The `options` param can have the following (optional) fields:
+
+    const options = {
+        sortBy: 'name:desc', // sort order
+        limit: 5, // maximum results per page
+        page: 2, // page number
+    };
+
+The plugin also supports sorting by multiple criteria (separated by a comma): `sortBy: name:desc,role:asc`
+
+The `paginate` method returns a Promise, which fulfills with an object having the following properties:
+
+    {
+        "results": [],
+        "page": 2,
+        "limit": 5,
+        "totalPages": 10,
+        "totalResults": 48
+    }
 
 ## Environment Variables
 
