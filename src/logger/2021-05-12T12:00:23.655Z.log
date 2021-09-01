@@ -1,1 +1,0 @@
-{"name":"beer-sdk","hostname":"hunandika-Latitude-3490","pid":20301,"level":30,"msg":"cache connected! { appName: 'beer-sdk',\n  CACHE_MEMORY_ENABLE: true,\n  CACHE_REDIS_ENABLE: true,\n  CACHE_MONGO_ENABLE: true }","time":"2021-05-12T12:00:23.808Z","v":0}

@@ -72,7 +72,7 @@
     "bunyan-debug-stream": "^2.0.0",
     "bunyan-slack": "^0.0.10",
     "cache-manager": "^3.4.3",
-    "cache-manager-mongodb": "github:hunandika/node-cache-manager-mongodb",
+    "cache-manager-mongodb": "git+https://github.com/hunandika/node-cache-manager-mongodb.git",
     "cache-manager-redis-store": "^2.0.0",
     "dotenv": "^8.2.0",
     "install": "^0.13.0",
