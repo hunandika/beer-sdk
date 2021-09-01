@@ -10,22 +10,13 @@ module.exports = {
     CACHE_REDIS_AUTHPASS: '',
     CACHE_REDIS_DB: 0,
     CACHE_REDIS_TTL: 60,
-
-    CACHE_MONGO_ENABLE: false,
-    CACHE_MONGO_URI: '',
-    CACHE_MONGO_COLLECTION: 'cacheManager',
-    CACHE_MONGO_POOL_SIZE: 5,
-    CACHE_MONGO_COMPRESSION: false,
-    CACHE_MONGO_TTL: 60,
   },
   development: {
     CACHE_MEMORY_ENABLE: true,
     CACHE_REDIS_ENABLE: false,
-    CACHE_MONGO_ENABLE: false,
   },
   production: {
     CACHE_MEMORY_ENABLE: false,
     CACHE_REDIS_ENABLE: false,
-    CACHE_MONGO_ENABLE: false,
   },
 };

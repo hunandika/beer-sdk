@@ -16,7 +16,6 @@ This is just a collection list node js package most used. If you create node js 
     - [bunyan-slack](https://www.npmjs.com/package/bunyan-slack)
     - [bunyan-debug-stream](https://www.npmjs.com/package/bunyan-debug-stream)
 - Cache: using [cache-manager](https://www.npmjs.com/package/cache-manager)
-    - [cache-manager-mongodb](https://www.npmjs.com/package/cache-manager-mongodb)
     - [cache-manager-redis-store](https://www.npmjs.com/package/cache-manager-redis-store)
     - Cache memory
 - MongPlug: Mongoose Plugins
@@ -174,22 +173,14 @@ Default Config Cache
     SDK_CACHE_REDIS_AUTHPASS=
     SDK_CACHE_REDIS_DB=0
     SDK_CACHE_REDIS_TTL=60
-    
-    SDK_CACHE_MONGO_URI=
-    SDK_CACHE_MONGO_COLLECTION=cacheManager
-    SDK_CACHE_MONGO_POOL_SIZE=5
-    SDK_CACHE_MONGO_COMPRESSION=false
-    SDK_CACHE_MONGO_TTL=60
       
     //NODE_ENV = development
     SDK_CACHE_MEMORY_ENABLE=true
     SDK_CACHE_REDIS_ENABLE=false
-    SDK_CACHE_MONGO_ENABLE=false
       
     //NODE_ENV = production
     SDK_CACHE_MEMORY_ENABLE=false
     SDK_CACHE_REDIS_ENABLE=false
-    SDK_CACHE_MONGO_ENABLE=false
 
 ##### *Note: You can override this config with adding to .env your project using prefix SDK_
 

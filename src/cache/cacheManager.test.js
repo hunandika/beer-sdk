@@ -24,7 +24,6 @@ describe('Cache Manager Testing', () => {
     expect(data).toEqual(userData);
     expect(cache.stores[0].store.name).toEqual('memory');
     expect(cache.stores[1].store.name).toEqual('redis');
-    expect(cache.stores[2].store.name).toEqual('mongodb');
     done();
   });
 });
