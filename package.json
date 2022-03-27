@@ -1,6 +1,6 @@
 {
   "name": "beer-sdk",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Wrapper package Node.js app most used for backend services",
   "main": "dist/index.js",
   "files": [
