@@ -3,6 +3,7 @@ language: node_js
 node_js:
   - '10'
 services:
+  - mongodb
   - redis-server
 cache: yarn
 branches:
@@ -16,6 +17,7 @@ before_script:
   - node --version
   - npm --version
   - yarn --version
+  - mongo --version
   #copy default config testing
   - cp .env.test.example .env.test
 script:
