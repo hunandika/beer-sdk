@@ -1,6 +1,7 @@
 const bunyan = require('bunyan');
 const bunyanDebugStream = require('bunyan-debug-stream');
 const BunyanSlack = require('bunyan-slack');
+const RotatingFileStream = require('bunyan-rotating-file-stream');
 
 const logger = config => {
   const streams = [];
@@ -32,10 +33,12 @@ const logger = config => {
   if (config.LOG_ROTATING_FILE_ENABLE) {
     streams.push({
       level: config.LOG_ROTATING_STREAM_LEVEL,
-      type: 'rotating-file',
-      path: config.LOG_ROTATING_FILE_PATH,
-      period: config.LOG_ROTATING_FILE_PERIOD, // daily rotation
-      count: parseInt(config.LOG_ROTATING_FILE_COUNT, 10) || 3, // keep 3 back copies
+      stream: new RotatingFileStream({
+        path: config.LOG_ROTATING_FILE_PATH,
+        period: config.LOG_ROTATING_FILE_PERIOD, // daily rotation
+        totalFiles: 1, // parseInt(config.LOG_ROTATING_FILE_COUNT, 10) || 1, // keep 3 back copies
+        rotateExisting: true,
+      }),
     });
   }
 
