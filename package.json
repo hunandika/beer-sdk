@@ -59,7 +59,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^6.0.0",
-    "javascript-obfuscator": "^0.18.1",
+    "javascript-obfuscator": "^4.0.0",
     "jest": "^26.6.3",
     "lint-staged": "^10.5.4",
     "mongoose": "^5.12.8",
@@ -74,6 +74,7 @@
     "bunyan-slack": "^0.0.10",
     "cache-manager": "^3.4.3",
     "cache-manager-redis-store": "^2.0.0",
+    "dayjs": "^1.11.5",
     "dotenv": "^8.2.0",
     "module-alias": "^2.2.2"
   },
