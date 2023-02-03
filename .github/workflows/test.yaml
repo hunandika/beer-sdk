@@ -10,16 +10,16 @@ jobs:
     environment: test
     container: node:16-alpine
     services:
-      mongodb:
+      mongo:
         image: mongo
         ports:
-        - 27017:27017
+          - 27017:27017
       # Label used to access the service container
       redis:
         # Docker Hub image
         image: redis
         ports:
-        - 6379:6379
+          - 6379:6379
         # Set health checks to wait until redis has started
         options: >-
           --health-cmd "redis-cli ping"
@@ -37,6 +37,6 @@ jobs:
       - name: Build Testing
         run: yarn build
       - name: Run test
-        run: yarn run test:codecov
+        run: yarn test:codecov
       # - run: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
       # - run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report coverage/lcov.info
