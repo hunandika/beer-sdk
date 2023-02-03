@@ -27,6 +27,7 @@ const paginate = schema => {
         const [key, order] = sortOption.split(':');
         sortingCriteria.push((order === 'desc' ? '-' : '') + key);
       });
+      sortingCriteria.push('createdAt');
       sort = sortingCriteria.join(' ');
     } else {
       sort = 'createdAt';
