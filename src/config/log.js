@@ -1,3 +1,5 @@
+const dayjs = require('dayjs');
+
 module.exports = {
   full: {
     LOG_RING_BUFFER_LIMIT: 100,
@@ -6,7 +8,7 @@ module.exports = {
     LOG_RING_BUFFER_LEVEL: 'info',
     LOG_SLACK_LEVEL: 'trace',
     LOG_ROTATING_STREAM_LEVEL: 'trace',
-    LOG_ROTATING_FILE_PATH: `${process.cwd()}/src/logger/${new Date().toISOString()}.log`,
+    LOG_ROTATING_FILE_PATH: `${process.cwd()}/src/logger/${dayjs().format('DD-MM-YYYY')}.log`,
     LOG_ROTATING_FILE_PERIOD: '1d',
     LOG_ROTATING_FILE_COUNT: 3,
   },
