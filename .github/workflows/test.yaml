@@ -30,6 +30,8 @@ jobs:
       # Downloads a copy of the code in your repository before running CI tests
       - name: Check out repository code
         uses: actions/checkout@v3
+      - name: echo env
+        run: echo $SDK_LOG_SLACK_WEBHOOK_URL
       - name: Prepare Env File
         run: cp .env.test.example .env.test
       - name: Install dependencies
@@ -38,5 +40,6 @@ jobs:
         run: yarn build
       - name: Run test
         run: yarn test:codecov
+
       # - run: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
       # - run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report coverage/lcov.info
