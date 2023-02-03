@@ -1260,10 +1260,10 @@ bunyan-debug-stream@^2.0.0:
     colors "1.4.0"
     exception-formatter "^1.0.4"
 
-bunyan-rotating-file-stream@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/bunyan-rotating-file-stream/-/bunyan-rotating-file-stream-2.0.0.tgz"
-  integrity sha512-Lu0d/kb83zBY6q6j7x49vn5axshrrJMZToOsiTT+tGe1mN3/hRDllhaky/WIzeu2wgbj5WTf3jvtcG4LDbgHug==
+bunyan-rotating-file-stream@^2.0.1:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/bunyan-rotating-file-stream/-/bunyan-rotating-file-stream-2.0.3.tgz#c382a1d71490bad7a10640199244677e7ff8011b"
+  integrity sha512-lymeXAhzVnGRhZWECCCvHnf7iCoZpp1tItx6be3A9x4A7v7kA3EnxxOrKkBeV4cnYLm9jlBKZzlO73uOhsulTg==
   dependencies:
     async "^3.2.0"
     lodash "^4.17.21"
@@ -1310,9 +1310,9 @@ cache-manager-redis-store@^2.0.0:
   dependencies:
     redis "^3.0.2"
 
-cache-manager@^3.4.3:
+cache-manager@^3.6.1:
   version "3.6.3"
-  resolved "https://registry.npmjs.org/cache-manager/-/cache-manager-3.6.3.tgz"
+  resolved "https://registry.yarnpkg.com/cache-manager/-/cache-manager-3.6.3.tgz#48052f3cf9ee4bac1cbb6adeedd69faf9da4ec04"
   integrity sha512-dS4DnV6c6cQcVH5OxzIU1XZaACXwvVIiUPkFytnRmLOACuBGv3GQgRQ1RJGRRw4/9DF14ZK2RFlZu1TUgDniMg==
   dependencies:
     async "3.2.3"
