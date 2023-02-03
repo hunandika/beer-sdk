@@ -30,12 +30,12 @@ jobs:
       # Downloads a copy of the code in your repository before running CI tests
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: echo env
-        run: echo "${{env.SDK_LOG_SLACK_WEBHOOK_URL}}"
-      - name: echo secrets env
-        run: echo "${{secrets.SDK_LOG_SLACK_WEBHOOK_URL}}"
       - name: Prepare Env File
         run: cp .env.test.example .env.test
+      - name: echo secrets env
+        run: echo "SDK_LOG_SLACK_WEBHOOK_URL=${{secrets.SDK_LOG_SLACK_WEBHOOK_URL}}" >> .env"
+      - name: cat Env File
+        run: cat .env
       - name: Install dependencies
         run: yarn --frozen-lockfile
       - name: Build Testing
