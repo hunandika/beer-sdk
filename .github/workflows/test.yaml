@@ -1,0 +1,42 @@
+name: Package Testing
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: test
+    container: node:16-alpine
+    services:
+      mongodb:
+        image: mongo
+        ports:
+        - 27017:27017
+      # Label used to access the service container
+      redis:
+        # Docker Hub image
+        image: redis
+        ports:
+        - 6379:6379
+        # Set health checks to wait until redis has started
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      # Downloads a copy of the code in your repository before running CI tests
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Prepare Env File
+        run: cp .env.test.example .env.test
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Build Testing
+        run: yarn build
+      - name: Run test
+        run: yarn run test:codecov
+      # - run: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
+      # - run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report coverage/lcov.info
