@@ -33,7 +33,7 @@ jobs:
       - name: Prepare Env File
         run: cp .env.test.example .env.test
       - name: echo secrets env
-        run: echo "SDK_LOG_SLACK_WEBHOOK_URL=${{secrets.SDK_LOG_SLACK_WEBHOOK_URL}}" >> .env"
+        run: echo "SDK_LOG_SLACK_WEBHOOK_URL=${{secrets.SDK_LOG_SLACK_WEBHOOK_URL}}" >> .env
       - name: cat Env File
         run: cat .env
       - name: Install dependencies
