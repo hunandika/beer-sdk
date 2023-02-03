@@ -71,7 +71,7 @@
     "bunyan-debug-stream": "^2.0.0",
     "bunyan-rotating-file-stream": "^2.0.1",
     "bunyan-slack": "^0.0.10",
-    "cache-manager": "^3.4.3",
+    "cache-manager": "^3.6.1",
     "cache-manager-redis-store": "^2.0.0",
     "dayjs": "^1.11.6",
     "dotenv": "^8.2.0",
