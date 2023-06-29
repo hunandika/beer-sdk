@@ -73,7 +73,7 @@
     "bunyan-slack": "^0.0.10",
     "cache-manager": "^3.6.1",
     "cache-manager-redis-store": "^2.0.0",
-    "dayjs": "^1.11.6",
+    "dayjs": "^1.11.8",
     "dotenv": "^8.2.0",
     "module-alias": "^2.2.2"
   },
